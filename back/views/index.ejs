@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GPX Viewer</title>
+  </head>
+  <body>
+    <h1>GPX Viewer</h1>
+    <table>
+      <tr>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Altitude</th>
+        <th>Time</th>
+      </tr>
+      <% gpx.trk[0].trkseg[0].trkpt.forEach(function(point) { %>
+        <tr>
+          <td><%= point.$.lat %></td>
+          <td><%= point.$.lon %></td>
+          <td><%= point.ele %></td>
+          <td><%= point.time %></td>
+        </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>
